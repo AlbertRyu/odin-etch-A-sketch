@@ -14,6 +14,7 @@ function genGrid(size){
             const square = document.createElement('div')
             square.classList = 'square'
             square.addEventListener('mouseenter',changeColor) 
+            square.addEventListener('mouseenter',addOpacity)
 
             row.appendChild(square)
         }
@@ -40,6 +41,16 @@ function changeColor(event){
     } 
     event.target.style.backgroundColor = `rgb(${r},${g},${b})`
     event.target.removeEventListener('mouseenter',changeColor)
+}
+
+function addOpacity(event){
+    opacity = Number(event.target.style.opacity)
+    if (opacity < 1){
+        opacity += 0.1
+        event.target.style.opacity = opacity
+    } else {
+        event.target.removeEventListener('mouseenter',addOpacity)
+    }
 }
 
 
