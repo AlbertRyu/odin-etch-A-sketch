@@ -7,15 +7,20 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    height: 50vh;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
 }
 
 .square {
-    border: 1px solid gray;
-    width: 20px;
-    height: 20px;
-    margin: 1px;
+    flex: auto;
 }
 
 .row {
     display: flex;
+    flex: auto;
+}
+
+.reGen {
+    margin-top: 20px;
 }
