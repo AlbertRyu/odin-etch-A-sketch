@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
 .container {
@@ -21,6 +22,3 @@ body {
     flex: auto;
 }
 
-.reGen {
-    margin-top: 20px;
-}

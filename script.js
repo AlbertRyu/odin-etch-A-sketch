@@ -21,9 +21,27 @@ function genGrid(size){
     }
 }
 
-function changeColor(event){
-    event.target.style.backgroundColor = 'black'
+// Decide if its colorful
+let colorful = false // Default as flase
+const colorToggleButton = document.querySelector('.colorToggle')
+colorToggleButton.addEventListener('click',toggleColor)
+
+function toggleColor(){
+    colorful = !colorful
+    colorToggleButton.textContent = `colorful : ${colorful}`
 }
+
+function changeColor(event){
+    let r = 0, g = 0, b = 0 // Default as Black
+    if (colorful) {
+        r = Math.floor(Math.random()*255)
+        g = Math.floor(Math.random()*255)
+        b = Math.floor(Math.random()*255)
+    } 
+    event.target.style.backgroundColor = `rgb(${r},${g},${b})`
+    event.target.removeEventListener('mouseenter',changeColor)
+}
+
 
 const reGen = document.querySelector('.reGen')
 reGen.addEventListener('click',restart)
